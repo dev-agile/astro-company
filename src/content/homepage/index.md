@@ -1,33 +1,35 @@
 ---
 banner:
-  title: Let us solve your critical website development challenges
-  content: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nihil enim maxime corporis cumque <br/> totam aliquid nam sint inventore optio modi neque laborum officiis necessitatibus
-  image: /images/banner-art.png
+  title: We use the Newest Technologies to Create Sophisticated Mobile and Web Applications.
+  content: Hungry for challenges, Hungry for impact
+  image: /images/banner-frame.png
   button:
-    label: "Contact Us"
+    label: "Consult Our Expert"
     link: "/contact"
     enable: true
+  footer:
+     content: "We collaborate with 50+ leading companies"  
 
 # feature
 feature: 
   title: Something You Need To Know
   features:
-  - name: "Clean Code"
+  - name: "Design Services"
     icon: "/images/code.svg"
     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Object Oriented"
+  - name: "Mockup Design"
     icon: "/images/oop.svg"
     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "24h Service"
+  - name: "Web Development"
     icon: "/images/user-clock.svg"
     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Value for Money"
+  - name: "Figma Designy"
     icon: "/images/love.svg"
     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Faster Response"
+  - name: "Social Media Post"
     icon: "/images/speedometer.svg"
     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Cloud Support"
+  - name: "Printing Design"
     icon: "/images/cloud.svg"
     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
 

@@ -3,7 +3,7 @@
 }
 
 .btn-primary {
-  @apply bg-primary text-white border-transparent z-[1]  rounded-[30px] relative hover:shadow-[0_12px_24px_-6px_rgba(45,67,121,.1)] transition-all capitalize;
+  @apply bg-white text-white border-transparent z-[1]  rounded-[30px] relative hover:shadow-[0_12px_24px_-6px_rgba(45,67,121,.1)] transition-all capitalize;
 
   &:after {
     @apply w-full h-full rounded-[30px] absolute left-1/2 top-1/2 translate-x-[-50%]  translate-y-[-50%] content-[''] bg-primary transition-all duration-300 ease-in-out -z-[1];
@@ -23,3 +23,35 @@
     @apply w-[110%] h-[110%];
   }
 }
+
+
+.btn-gradient {
+  @apply w-full text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2 relative overflow-hidden;
+
+  &:after {
+    @apply w-full h-full rounded-lg absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] content-[''] bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 transition-all duration-300 ease-in-out opacity-0 -z-[1];
+  }
+
+  &:hover::after {
+    @apply opacity-100 w-[110%] h-[110%] translate-x-[-50%] translate-y-[-50%];
+    transition: all 0.4s ease-out;
+  }
+}
+
+.btn-light {
+  @apply w-full text-[#374BFA] bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2 relative overflow-hidden;
+  transform-origin: center;
+
+  &:after {
+    @apply w-full h-full rounded-lg absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] content-[''] bg-white transition-all duration-300 ease-in-out opacity-0 -z-[1];
+  }
+
+  &:hover {
+    @apply scale-105;
+    transition: transform 0.3s ease-out;
+  }
+}
+
+
+
+

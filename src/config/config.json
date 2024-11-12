@@ -1,14 +1,14 @@
 {
   "site": {
-    "title": "Bigspring Light Astro",
+    "title": "Cognivac",
     "base_url": "https://bigspring-light-astro.vercel.app",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
-    "logo_width": "200",
-    "logo_height": "38",
-    "logo_text": "Astroplate"
+    "logo_width": "49",
+    "logo_height": "50",
+    "logo_text": "cognivac"
   },
 
   "settings": {
@@ -19,7 +19,7 @@
 
   "nav_button": {
     "enable": true,
-    "label": "Get Started",
+    "label": "Contact Us",
     "link": "/contact"
   },
 

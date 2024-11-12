@@ -2,6 +2,7 @@
 import Logo from "@/components/Logo.astro";
 import { nav_button } from "@/config/config.json";
 import menu from "@/config/menu.json";
+import Button from "@/components/Button.astro";
 
 const pathname = new URL(Astro.request.url).pathname;
 
@@ -21,7 +22,7 @@ const { main }: { main: NavigationLink[] } = menu;
 ---
 
 <header class="header">
-  <nav class="navbar container">
+  <nav class="navbar container max-w-[90%]">
     <!-- logo -->
     <div class="order-0">
       <Logo />
@@ -54,7 +55,7 @@ const { main }: { main: NavigationLink[] } = menu;
 
     <ul
       id="nav-menu"
-      class="navbar-nav order-3 hidden w-full md:order-1 md:flex md:w-auto md:space-x-3"
+      class="navbar-nav order-3 hidden w-full md:order-1 md:flex md:w-auto md:space-x-3 items-baseline"
     >
       {
         main.map((menu) => (
@@ -99,28 +100,24 @@ const { main }: { main: NavigationLink[] } = menu;
       }
       {
         nav_button.enable && (
-          <div class="block md:hidden">
-            <a
-              class="btn btn-primary z-0 ml-auto py-[14px]"
-              href={nav_button.link}
-            >
-              {nav_button.label}
-            </a>
+          <div class="order-1 ml-auto hidden items-center md:order-2 md:ml-0 md:flex md:min-w-[150px] lg:min-w-[200px]">
+            <Button
+              link={nav_button.link}
+              label={nav_button.label}
+              class="btn-gradient z-0 ml-auto"
+            />
           </div>
         )
       }
     </ul>
-    {
+    <!-- { Commented because of mobile responsivness
       nav_button.enable && (
-        <div class="order-1 ml-auto hidden items-center md:order-2 md:ml-0 md:flex md:min-w-[150px] lg:min-w-[200px]">
-          <a
-            class="btn btn-primary z-0 ml-auto py-[14px]"
-            href={nav_button.link}
-          >
+        <div class="block md:hidden">
+          <a class="btn-gradient z-0 ml-auto" href={nav_button.link}>
             {nav_button.label}
           </a>
         </div>
       )
-    }
+    } -->
   </nav>
 </header>

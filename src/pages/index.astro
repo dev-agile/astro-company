@@ -4,6 +4,7 @@ import Base from "@/layouts/Base.astro";
 import Cta from "@/layouts/components/Cta.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import { getEntryBySlug } from "astro:content";
+import Button from "@/components/Button.astro";
 
 const homepage = await getEntryBySlug("homepage", "index");
 const { banner, feature, services, workflow, call_to_action } = homepage.data;
@@ -11,33 +12,42 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
 
 <Base>
   <!-- banner -->
-  <section class="section pb-[50px]">
+  <section
+    class="section pb-[50px] bg-[#002145] !relative bg-[url('/images/banner-frame.png')] bg-cover bg-center"
+  >
     <div class="container">
       <div class="row text-center">
-        <div class="mx-auto lg:col-10">
-          <h1 class="font-primary font-bold">{banner?.title}</h1>
+        <div class="mx-auto lg:col-10 pt-20">
+          <div class="w-full">
+          <h1 class="font-primary text-theme-light font-medium text-[68px] leading-[86px]">
+            {banner?.title}
+          </h1>
+        </div>
           {
             banner?.content && (
-              <p class="mt-4" set:html={markdownify(banner.content)} />
+              <p
+                class="mt-4 text-theme-light font-thin text-8"
+                set:html={markdownify(banner.content)}
+              />
             )
           }
 
           {
             banner?.button?.enable && (
-              <a class="btn btn-primary mt-4" href={banner.button.link}>
-                {banner.button.label}
-              </a>
+              <div class="mt-20">
+                <Button
+                  link={banner.button.link}
+                  label={banner.button.label}
+                  class="max-w-[248px] btn-light"
+                />
+              </div>
             )
           }
-
           {
-            banner?.image && (
-              <Image
-                class="mx-auto mt-12"
-                src={banner?.image}
-                width={750}
-                height={390}
-                alt="banner image"
+            banner?.footer && (
+              <p
+                class="mt-10 text-theme-light font-medium"
+                set:html={markdownify(banner.footer.content)}
               />
             )
           }
@@ -47,30 +57,19 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
   </section>
 
   <!-- Features -->
-  <section class="section bg-theme-light">
+  <section class="section bg-theme-dark">
     <div class="container">
       <div class="text-center">
         <h2>{markdownify(feature!.title)}</h2>
       </div>
-      <div class="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div
+        class="mt-8 grid gap-x-8 gap-y-6 place-items-start sm:grid-cols-2 lg:grid-cols-3"
+      >
         {
           feature!.features.map((item: any, i: number) => (
-            <div class="feature-card rounded-xl bg-white p-5 pb-8 text-center">
+            <div class="feature-card rounded-xl bg-white px-14 py-[60px] text-left">
               {item.icon && (
-                // <Image
-                //   class="mx-auto"
-                //   src={item.icon}
-                //   width={30}
-                //   height={30}
-                //   alt=""
-                // />
-                <img
-                  class="mx-auto"
-                  alt={item.icon}
-                  src={item.icon}
-                  width={30}
-                  height={30}
-                />
+                <img alt={item.icon} src={item.icon} width={30} height={30} />
               )}
               <div class="mt-4">
                 <p class="h5" set:html={markdownify(item!.name)} />

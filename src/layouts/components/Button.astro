@@ -1,0 +1,19 @@
+---
+import { BsArrowUpRight } from "react-icons/bs";
+const {
+  link,
+  label,
+  showIcon = true,
+  class: additionalClass = "",
+} = Astro.props;
+---
+
+<div class="grid place-items-center">
+  <a
+    class={`flex items-center gap-x-3 justify-center ${additionalClass}`}
+    href={link}
+  >
+    {label && label}
+    {showIcon && <BsArrowUpRight />}
+  </a>
+</div>
