@@ -13,42 +13,62 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
 <Base>
   <!-- banner -->
   <section
-    class="section pb-[50px] bg-[#002145] !relative bg-[url('/images/banner-frame.png')] bg-cover bg-center"
+    class="section pb-[50px] bg-[#002145] relative z-10 max-h-[800px]"
+    aria-labelledby="banner-title"
   >
+    <div class="absolute inset-0 -z-10 h-full w-screen">
+      <Image
+        src={banner?.image}
+        alt="Banner Background"
+        loading="lazy"
+        class="object-cover h-full w-full"
+        format="webp"
+        width="4514"
+        height="200"
+        decoding="async"
+      />
+    </div>
     <div class="container">
       <div class="row text-center">
-        <div class="mx-auto lg:col-10 pt-20">
-          <div class="w-full">
-          <h1 class="font-primary text-theme-light font-medium text-[68px] leading-[86px]">
-            {banner?.title}
-          </h1>
-        </div>
+        <div class="mx-auto lg:col-10 2xl:pt-20 xl:pt-20 xs:pt-4 sm:pt-8 md:pt-12 lg:pt-16">
+          {/* Banner Title */}
+          <header>
+            <h1
+              id="banner-title"
+              class="font-primary text-theme-light font-medium 2xl:text-[68px] 2xl:leading-[86px] xl:text-[68px] xl:leading-[86px] lg:text-[64px] lg:leading-[86px] md:text-[48px] md:leading-[68px] sm:text-[48px] sm:leading-[68px] xs:text-[36px] xs:leading-[60px]"
+            >
+              {banner?.title}
+            </h1>
+          </header>
+
+          {/* Banner Content */}
           {
             banner?.content && (
-              <p
-                class="mt-4 text-theme-light font-thin text-8"
-                set:html={markdownify(banner.content)}
-              />
+              <article class="mt-4 text-theme-light font-thin text-8 md:text-7 sm:text-6 xs:text-[14px]">
+                <p set:html={markdownify(banner.content)} />
+              </article>
             )
           }
 
+          {/* Banner Button */}
           {
             banner?.button?.enable && (
-              <div class="mt-20">
+              <div class="mt-16">
                 <Button
                   link={banner.button.link}
                   label={banner.button.label}
-                  class="max-w-[248px] btn-light"
+                  class="max-w-[248px] w-full sm:w-auto btn-light"
                 />
               </div>
             )
           }
+
+          {/* Banner Footer */}
           {
             banner?.footer && (
-              <p
-                class="mt-10 text-theme-light font-medium"
-                set:html={markdownify(banner.footer.content)}
-              />
+              <article class="mt-4 text-theme-light font-thin text-8 md:text-7 sm:text-6 xs:text-[12px]">
+                <p>{markdownify(banner.footer.content)}</p>
+              </article>
             )
           }
         </div>

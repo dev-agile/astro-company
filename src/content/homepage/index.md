@@ -2,7 +2,7 @@
 banner:
   title: We use the Newest Technologies to Create Sophisticated Mobile and Web Applications.
   content: Hungry for challenges, Hungry for impact
-  image: /images/banner-frame.png
+  image: /images/banner-frame.webp
   button:
     label: "Consult Our Expert"
     link: "/contact"

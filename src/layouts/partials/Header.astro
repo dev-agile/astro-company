@@ -55,7 +55,7 @@ const { main }: { main: NavigationLink[] } = menu;
 
     <ul
       id="nav-menu"
-      class="navbar-nav order-3 hidden w-full md:order-1 md:flex md:w-auto md:space-x-3 items-baseline"
+      class="navbar-nav order-3 hidden w-full md:order-1 md:flex md:w-auto md:space-x-1 items-baseline"
     >
       {
         main.map((menu) => (
@@ -110,14 +110,16 @@ const { main }: { main: NavigationLink[] } = menu;
         )
       }
     </ul>
-    <!-- { Commented because of mobile responsivness
+    { 
       nav_button.enable && (
         <div class="block md:hidden">
-          <a class="btn-gradient z-0 ml-auto" href={nav_button.link}>
-            {nav_button.label}
-          </a>
+          <Button
+              link={nav_button.link}
+              label={nav_button.label}
+              class="btn-gradient z-0 ml-auto"
+            />
         </div>
       )
-    } -->
+    }
   </nav>
 </header>
