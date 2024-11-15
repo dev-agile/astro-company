@@ -15,7 +15,7 @@ const homepage = defineCollection({
     }).optional(),
     feature: z.object({
       title: z.string().optional(),
-      features: z.array(z.object({name: z.string().optional(), icon: z.string().optional(), content: z.string().optional()})),
+      features: z.array(z.object({ name: z.string().optional(), icon: z.string().optional(), content: z.string().optional() })),
     }).optional(),
     services: z.array(z.object({
       title: z.string().optional(),
@@ -41,7 +41,21 @@ const homepage = defineCollection({
         link: z.string().default("#"),
         enable: z.boolean().default(true)
       }).optional()
-    }).optional()
+    }).optional(),
+    why_cognivac: z.object({
+      title: z.string(),
+      content: z.string(),
+      image: z.string(),
+      chip: z.object({
+        title: z.string()
+      }).optional(),
+      button: z.object({
+        label: z.string(),
+        link: z.string().default("/contact"),
+        enable: z.boolean().default(true)
+      }).optional(),
+      enable: z.boolean().default(true)
+    }).optional(),
   }),
 });
 
