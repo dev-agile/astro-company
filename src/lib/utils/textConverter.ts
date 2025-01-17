@@ -13,7 +13,6 @@ export const slugify = (content: string) => {
   return slug(content);
 };
 
-// markdownify
 export const markdownify = (content: string | undefined) => {
   if (!content) return null;
 
