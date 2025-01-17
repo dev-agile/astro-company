@@ -5,7 +5,7 @@
 
 // container
 .container {
-  @apply mx-auto max-w-[1140px] px-4;
+  @apply mx-auto max-w-screen-2xl px-4;
 }
 
 // form style
@@ -52,7 +52,7 @@
 
 //feature card
 .feature-card {
-  @apply transition-all duration-200 ease-in-out hover:shadow;
+  @apply transition-all duration-200 ease-in-out hover:scale-105;
 }
 
 //swiper pagination

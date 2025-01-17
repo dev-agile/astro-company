@@ -5,23 +5,23 @@
       "url": "/"
     },
     {
-      "name": "Blog",
+      "name": "About Us",
       "url": "/blog"
     },
     {
-      "name": "Pricing",
+      "name": "Services",
       "url": "/pricing"
     },
     {
-      "name": "Contact",
+      "name": "Projects",
       "url": "/contact"
     },
     {
-      "name": "FAQ",
+      "name": "Teams",
       "url": "/faq"
     },
     {
-      "name": "Elements",
+      "name": "Technologies",
       "url": "/elements"
     }
   ],

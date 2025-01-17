@@ -1,40 +1,48 @@
 ---
 banner:
-  title: Let us solve your critical website development challenges
-  content: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nihil enim maxime corporis cumque <br/> totam aliquid nam sint inventore optio modi neque laborum officiis necessitatibus
-  image: /images/banner-art.png
+  title: We use the Newest Technologies to Create Sophisticated Mobile and Web Applications.
+  content: Hungry for challenges, Hungry for impact
+  image: /images/banner-frame.webp
   button:
-    label: "Contact Us"
+    label: "Consult Our Expert"
     link: "/contact"
     enable: true
+  footer:
+    content: "We collaborate with 50+ leading companies"
 
 # feature
-feature: 
-  title: Something You Need To Know
+feature:
+  title: Our Services & offering
+  content:
+    Lorem ipsum dolor sit amet consectetur. Sem egestas nulla fames luctus
+    laoreet nunc. Feugiat orci accumsan tortor nunc rhoncus pellentesque
+    nunc tincidunt eu. In ipsum nec pharetra nisi lectus porttitor sed
+    felis.
+  card_bg: /images/card-bg.png  
   features:
-  - name: "Clean Code"
-    icon: "/images/code.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Object Oriented"
-    icon: "/images/oop.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "24h Service"
-    icon: "/images/user-clock.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Value for Money"
-    icon: "/images/love.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Faster Response"
-    icon: "/images/speedometer.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Cloud Support"
-    icon: "/images/cloud.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
+    - name: "Design Services"
+      icon: "/images/digital-service.png"
+      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
+    - name: "Mockup Design"
+      icon: "/images/mockup-design.png"
+      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
+    - name: "Web Development"
+      icon: "/images/web-development.png"
+      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
+    - name: "Figma Design"
+      icon: "/images/figma-design.png"
+      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
+    - name: "Social Media Post"
+      icon: "/images/social-media-post.png"
+      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
+    - name: "Printing Design"
+      icon: "/images/printing-design.png"
+      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
 
 # services
 services:
-  - title: "It is the most advanced digital marketing and it company."
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat. consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat."
+  - title: "It is the most advanced digital marketing and IT company."
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     images:
       - "/images/service-slide-1.png"
       - "/images/service-slide-2.png"
@@ -45,16 +53,16 @@ services:
       link: /contact
 
   - title: "It is a privately owned Information and cyber security company"
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat. consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat."
-    images: 
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    images:
       - "/images/service-slide-1.png"
     button:
       enable: true
       label: Check it out
       link: /contact
-  
+
   - title: "It’s a team of experienced and skilled people with distributions"
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat. consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat."
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     images:
       - "/images/service-slide-1.png"
       - "/images/service-slide-2.png"
@@ -65,7 +73,7 @@ services:
       link: /contact
 
   - title: "A company standing different from others"
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat. consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat."
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     images:
       - "/images/service-slide-1.png"
       - "/images/service-slide-2.png"
@@ -76,7 +84,7 @@ services:
       link: /contact
 
 # workflow
-workflow: 
+workflow:
   title: "Experience the best workflow with us"
   image: "/images/banner.png"
   description: ""
@@ -84,10 +92,22 @@ workflow:
 # call_to_action
 call_to_action:
   title: Ready to get started?
-  content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur.
-  image: '/images/cta.png'
+  content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  image: "/images/cta.png"
   button:
     enable: true
     label: "Contact Us"
+    link: "/contact"
+
+# why_cognivac
+why_cognivac:
+  title: "We partner with seasoned business leaders and entrepreneurs to build and transform businesses."
+  content: "Our decade-long expertise and innovative solutions guide businesses across all industries through their digitalization and automation journey assisted by AI technologies. We help businesses move forward in every stage of the product journey."
+  image: "/images/why-cognivac.png"
+  chip:
+    title: "WHY COGNIVAC"
+  button:
+    enable: true
+    label: "Consult Our Expert"
     link: "/contact"
 ---

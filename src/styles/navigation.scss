@@ -47,9 +47,9 @@
 }
 
 .nav-link {
-  @apply py-3 px-2 font-primary text-base font-bold text-dark transition hover:text-primary md:py-4 lg:px-3;
+  @apply py-3 px-2 font-[#4F75FF] text-base font-normal text-dark transition hover:text-[#4F75FF] md:py-4 lg:px-3;
 
   &-active {
-    @apply text-primary;
+    @apply text-[#4F75FF] underline decoration-[#4F75FF] underline-offset-[20px] decoration-4;
   }
 }

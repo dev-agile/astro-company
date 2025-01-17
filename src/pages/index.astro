@@ -4,41 +4,73 @@ import Base from "@/layouts/Base.astro";
 import Cta from "@/layouts/components/Cta.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import { getEntryBySlug } from "astro:content";
+import Button from "@/components/Button.astro";
 
 const homepage = await getEntryBySlug("homepage", "index");
-const { banner, feature, services, workflow, call_to_action } = homepage.data;
+const { banner, feature, services, workflow, call_to_action, why_cognivac } =
+  homepage.data;
 ---
 
 <Base>
   <!-- banner -->
-  <section class="section pb-[50px]">
-    <div class="container">
+  <section
+    class="section pb-[50px] bg-[#002145] relative z-10 max-h-[800px]"
+    aria-labelledby="banner-title"
+  >
+    <div class="absolute inset-0 -z-10 h-full w-full">
+      <Image
+        src={banner?.image}
+        alt="Banner Background"
+        loading="lazy"
+        class="object-cover h-full w-full"
+        format="webp"
+        width={1140}
+        height={200}
+        decoding="async"
+      />
+    </div>
+    <div class="container max-w-[1140px]">
       <div class="row text-center">
-        <div class="mx-auto lg:col-10">
-          <h1 class="font-primary font-bold">{banner?.title}</h1>
+        <div
+          class="mx-auto lg:col-10 2xl:pt-20 xl:pt-20 xs:pt-4 sm:pt-8 md:pt-12 lg:pt-16"
+        >
+          {/* Banner Title */}
+          <header>
+            <h1
+              id="banner-title"
+              class="font-primary text-theme-light font-medium 2xl:text-[68px] 2xl:leading-[86px] xl:text-[68px] xl:leading-[86px] lg:text-[64px] lg:leading-[86px] md:text-[48px] md:leading-[68px] sm:text-[48px] sm:leading-[68px] xs:text-[36px] xs:leading-[60px]"
+            >
+              {banner?.title}
+            </h1>
+          </header>
+
+          {/* Banner Content */}
           {
             banner?.content && (
-              <p class="mt-4" set:html={markdownify(banner.content)} />
+              <article class="mt-4 text-theme-light font-thin text-8 md:text-7 sm:text-6 xs:text-[14px]">
+                <p set:html={markdownify(banner.content)} />
+              </article>
             )
           }
 
+          {/* Banner Button */}
           {
             banner?.button?.enable && (
-              <a class="btn btn-primary mt-4" href={banner.button.link}>
-                {banner.button.label}
-              </a>
+              <div class="mt-16 grid place-items-center">
+                <Button
+                  link={banner.button.link}
+                  label={banner.button.label}
+                  class="max-w-[248px] w-full sm:w-auto btn-light"
+                />
+              </div>
             )
           }
 
           {
-            banner?.image && (
-              <Image
-                class="mx-auto mt-12"
-                src={banner?.image}
-                width={750}
-                height={390}
-                alt="banner image"
-              />
+            banner?.footer && (
+              <article class="mt-4 text-theme-light font-thin text-8 md:text-7 sm:text-6 xs:text-[12px]">
+                <p>{markdownify(banner.footer.content)}</p>
+              </article>
             )
           }
         </div>
@@ -46,43 +78,106 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
     </div>
   </section>
 
-  <!-- Features -->
-  <section class="section bg-theme-light">
-    <div class="container">
-      <div class="text-center">
-        <h2>{markdownify(feature!.title)}</h2>
-      </div>
-      <div class="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+  <section class="container">
+    <!-- Why cognivac -->
+    <section class="flex mt-[152px] overflow-hidden">
+      <picture
+        class="max-h-fit max-w-[860px] relative rounded-[20px] mr-[44px] 2xl:grid xl:grid lg:grid md:grid xs:hidden"
+      >
+        <div
+          class="absolute inset-0 bg-black rounded-[20px] max-h-[680px]"
+          style="background: linear-gradient(230.22deg, rgba(0, 0, 0, 0) 23.2%, #000000 100.6%);"
+        >
+        </div>
+        <Image
+          src={why_cognivac.image}
+          alt={"Why Cognivac"}
+          width="860"
+          height="680"
+          class="object-cover h-[680px] w-[860] rounded-[20px]"
+          decoding="async"
+          format="webp"
+        />
+      </picture>
+      <article
+        class="max-w-full sm:max-w-full md:max-w-[50%] lg:max-w-[50%] xl:max-w-[50%] 2xl:max-w-[50%] 2xl:text-start xl:text-start lg:text-start md:text-start sm:text-center xs:text-center mt-2"
+      >
+        <span
+          class="bg-[#DFEEFF] px-[27px] py-2 rounded-[26px] text-[#007AFF] font-semibold"
+          >{markdownify(why_cognivac.chip.title)}</span
+        >
+        <h3
+          class="mt-[18px] text-[21px] leading-[26px]
+        sm:text-[28px] sm:leading-[30px]
+        md:text-[32px] md:leading-[38px] md:mt-[28px]
+        lg:text-[48px] lg:leading-[50px] lg:mt-[32px]
+        xl:text-[56px] xl:leading-[58px] xl:mt-[36px]
+        2xl:text-[64px] 2xl:leading-[70px] 2xl:mt-[55px]"
+        >
+          {markdownify(why_cognivac.title)}
+        </h3>
+        <p class="text-[20px] mt-5">{markdownify(why_cognivac.content)}</p>
         {
-          feature!.features.map((item: any, i: number) => (
-            <div class="feature-card rounded-xl bg-white p-5 pb-8 text-center">
-              {item.icon && (
-                // <Image
-                //   class="mx-auto"
-                //   src={item.icon}
-                //   width={30}
-                //   height={30}
-                //   alt=""
-                // />
-                <img
-                  class="mx-auto"
-                  alt={item.icon}
-                  src={item.icon}
-                  width={30}
-                  height={30}
-                />
-              )}
-              <div class="mt-4">
-                <p class="h5" set:html={markdownify(item!.name)} />
-                <p class="mt-3">{item.content}</p>
-              </div>
+          why_cognivac?.button?.enable && (
+            <div class="mt-20 grid 2xl:place-items-baseline xl:place-items-baseline lg:place-items-baseline md:place-items-baseline sm:place-items-center xs:place-items-center">
+              <Button
+                link={why_cognivac.button.link}
+                label={why_cognivac.button.label}
+                class="max-w-[248px] sm:w-auto btn-gradient"
+              />
             </div>
-          ))
+          )
         }
-      </div>
-    </div>
-  </section>
+      </article>
+    </section>
 
+    <!-- Services and Offering -->
+    <section class="flex items-center justify-between mt-[114px]">
+      <h2 class="2xl:max-w-[390px] 2xl:text-[64px] xl:max-w-[390px] xl:text-[64px] lg:max-w-[390px] lg:text-[54px] md:max-w-[280px] md:text-[44px] sm:max-w-[190px] sm:text-[34px] xs:max-w-[35%] xs:text-[28px]">{feature.title}</h2>
+      <p class="2xl:max-w-[600px] xl:max-w-[600px] lg:max-w-[500px] md:max-w-[425px] sm:max-w-[45%] xs:max-w-[50%] text-5">
+        {markdownify(feature!.content)}
+      </p>
+    </section>
+
+    <!-- Features -->
+    <section class="section bg-theme-dark">
+      <div class="container max-w-full mx-0">
+        <div
+          class="mt-8 grid gap-x-8 2xl:gap-y-6 xl:gap-y-6 lg:gap-y-16 md:gap-y-4 sm:gap-y-16 xs:gap-y-16 place-items-start sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3"
+        >
+          {
+            // Need fixing for responsiveness
+            feature!.features.map((item: any, i: number) => ( 
+              <div class="feature-card rounded-xl bg-white text-left z-10 relative 2xl:px-[55px] 2xl:py-[60px] 2xl:h-[376px] 2xl:w-[480px] xl:h-fit xl:w-fit xl:px-[40px] xl:py-[30px] lg:w-fit lg:h-fit lg:px-[55px] lg:py-[60px]">
+                <div class="absolute inset-0 -z-10">
+                  <Image
+                    src={feature?.card_bg}
+                    alt="Banner Background"
+                    loading="lazy"
+                    class="object-cover rounded-xl"
+                    format="webp"
+                    width="530"
+                    height="376"
+                    decoding="async"
+                  />
+                </div>
+                {item.icon && (
+                  <Image alt={item.icon} src={item.icon} width={90} height={90} />
+                )}
+                <div class="mt-4">
+                  <p
+                    class="h5 text-[35px] font-semibold"
+                    set:html={markdownify(item!.name)}
+                  />
+                  <p class="mt-3 text-lg">{item.content}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </section>
   <!-- Services -->
   {
     services!.map((service: any, index: number) => {
